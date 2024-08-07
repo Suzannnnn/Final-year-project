@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Login and Sign Up Page</title>
+    <style>
+      .center {
+        display: none;
+      }
+      .center.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center login-section active" id="login-section">
+      <h1>Log In</h1>
+      <form action="">
+        <div class="txt-field">
+          <input type="text" required />
+          <span></span>
+          <label>Username</label>
+        </div>
+        <div class="txt-field">
+          <input type="password" required />
+          <span></span>
+          <label>Password</label>
+        </div>
+        <div class="pass">Forget Password?</div>
+        <input type="submit" value="Login" />
+        <div class="signup-link">
+          Not a member?
+          <a href="#" onclick="toggleForms('signup')">Sign up</a>
+        </div>
+      </form>
+    </div>
+    <script>
+      function toggleForms(form) {
+        const loginSection = document.getElementById("login-section");
+        const signupSection = document.getElementById("signup-section");
+
+        if (form === "signup") {
+          loginSection.classList.remove("active");
+          signupSection.classList.add("active");
+        } else {
+          loginSection.classList.add("active");
+          signupSection.classList.remove("active");
+        }
+      }
+    </script>
+  </body>
+</html>
